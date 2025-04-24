@@ -5,6 +5,7 @@
 
 char id[] = "ELlejF0wet64qIfWWimUA";
 char secret[] = "kXz0BIX4CCq2qUm87hahetHZGUhk6Eyqk5WUluZx";
+char owmKey[] = "0b3bc3f92030647cb6741cbbdf4a86f3";
 
 char earthquakeAPI[512];
 char weatherAPI[512];
@@ -47,6 +48,11 @@ void clear_output(curlOut *out) {
 }
 
 void buildLink(char *rqType, char *id, char *secret, char *out) {
-    sprintf(out, "https://data.api.xweather.com/%s/?client_id=%s&client_secret=%s&p=", rqType, id, secret);
-    addLatLon2Link(out);
+	if(strcmp(rqType,WEATHER)==0){
+		sprintf(out, "https://api.openweathermap.org/data/2.5/weather?appid=%s&",secret);
+	}
+	if(strcmp(rqType,EARTHQ)==0){
+		sprintf(out, "https://data.api.xweather.com/%s/?client_id=%s&client_secret=%s&p=", rqType, id, secret);
+	}
+	addLatLon2Link(out,rqType);
 }
