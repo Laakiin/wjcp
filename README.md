@@ -3,7 +3,7 @@
 **Outil de traitement et de parsing de données géographiques et API en C**
 
 Ce projet permet de :
-- **Parser et traiter des données** (probablement au format JSON).
+- **Parser et traiter des données** (au format JSON).
 - **Interagir avec des APIs** ou des données géographiques.
 - **Générer une sortie formatée en JSON**.
 
